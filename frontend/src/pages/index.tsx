@@ -1,7 +1,5 @@
-import Image from "next/image";
-import logo_Barber from "../../public/logo_Barber.svg";
 import Head from "next/head";
-import { Button, useToast } from "@chakra-ui/react";
+import { Center, Flex, Text } from "@chakra-ui/react";
 
 export default function Home() {
   return (
@@ -9,10 +7,16 @@ export default function Home() {
       <Head>
         <title> BarberPRO - Seu Sistema completo</title>
       </Head>
-      <div>
-        <Image src={logo_Barber} alt="logotipo" />
-        <h1 className="m-25"> Teste Projeto</h1>
-      </div>
+      <Flex
+        background="barber.900"
+        height="100vh"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Text color="text.whiteDefault" fontSize={30} marginTop={10}>
+          Página inicial
+        </Text>
+      </Flex>
     </>
   );
 }

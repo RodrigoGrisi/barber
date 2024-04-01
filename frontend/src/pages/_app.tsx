@@ -3,7 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 
 const colors = {
-  baber: {
+  barber: {
     900: "#12131b",
     400: "#b11b29",
     100: "#c6c6c6",
@@ -17,11 +17,16 @@ const colors = {
   orange: {
     900: "#fba931",
   },
+  text: {
+    whiteDefault: "#fff",
+  },
 };
+
+const theme = extendTheme({ colors });
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Component {...pageProps} />
     </ChakraProvider>
   );
