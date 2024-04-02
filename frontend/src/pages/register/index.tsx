@@ -13,14 +13,14 @@ import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 
-export default function Login() {
+export default function Register() {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
 
   return (
     <>
       <Head>
-        <title>Crie sua conta do BarberPro</title>
+        <title> BarberPRO - Login</title>
       </Head>
       <Flex
         background="barber.900"
@@ -46,7 +46,13 @@ export default function Login() {
             />
           </Center>
           <Input
-            // variant="filled"
+            color="white "
+            size="lg"
+            placeholder="Digite seu nome"
+            type="text"
+            mb={3}
+          />
+          <Input
             color="white "
             size="lg"
             placeholder="email@email.com"
@@ -74,13 +80,12 @@ export default function Login() {
             transition={"all 0.5s"}
             background="button.cta"
           >
-            Acessar
+            Cadastrar
           </Button>
           <Center mt={3}>
-            <Link href="/register">
+            <Link href="/login">
               <Text cursor="pointer" color="white" textAlign="center">
-                Quero cadastrar minha barbearia.
-                <strong> Clique Aqui</strong>
+                Já possui login?. <strong> Clique Aqui</strong>
               </Text>
             </Link>
           </Center>
