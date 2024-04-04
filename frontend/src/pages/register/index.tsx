@@ -10,12 +10,21 @@ import {
 } from "@chakra-ui/react";
 import logobarber from "../../../public/logo_Barber.svg";
 import Image from "next/image";
-import { useState } from "react";
 import Link from "next/link";
 
+import { useState } from "react";
+
 export default function Register() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
+
+  function handleRegister() {
+    console.log(name, email, password);
+  }
 
   return (
     <>
@@ -46,6 +55,8 @@ export default function Register() {
             />
           </Center>
           <Input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             color="white "
             size="lg"
             placeholder="Digite seu nome"
@@ -53,6 +64,8 @@ export default function Register() {
             mb={3}
           />
           <Input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             color="white "
             size="lg"
             placeholder="email@email.com"
@@ -61,6 +74,8 @@ export default function Register() {
           />
           <InputGroup size="md">
             <Input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               pr="4.5rem"
               type={show ? "text" : "password"}
               placeholder="Enter password"
@@ -79,6 +94,7 @@ export default function Register() {
             mb={3}
             transition={"all 0.5s"}
             background="button.cta"
+            onClick={handleRegister}
           >
             Cadastrar
           </Button>
